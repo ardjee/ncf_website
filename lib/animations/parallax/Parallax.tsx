@@ -8,6 +8,7 @@ import {
     useTransform,
 } from "motion/react"
 import { useEffect, useRef } from "react"
+import Image from "next/image"
 
 function useParallax(value: MotionValue<number>, distance: number) {
     return useTransform(value, [0, 1], [-distance, distance])
@@ -29,11 +30,14 @@ function Image({ id, imagePath, imageAlt }: ImageProps) {
 
     return (
         <section className="h-screen snap-start flex justify-center items-center relative">
-            <div className="w-[300px] h-[400px] my-5 bg-grey-light overflow-hidden max-[500px]:w-[150px] max-[500px]:h-[200px]">
-                <img
+            <div className="relative w-[300px] h-[400px] my-5 bg-grey-light overflow-hidden max-[500px]:w-[150px] max-[500px]:h-[200px]">
+                <Image
                     src={imagePath || defaultImagePath}
                     alt={imageAlt || defaultAlt}
-                    className="w-[300px] h-[400px] object-cover max-[500px]:w-[150px] max-[500px]:h-[200px]"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 500px) 150px, 300px"
+                    loading="lazy"
                 />
             </div>
             <motion.h2

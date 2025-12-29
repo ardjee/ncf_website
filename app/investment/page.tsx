@@ -1,3 +1,5 @@
+import Logo from '@/components/ui/Logo'
+
 export const dynamic = 'force-static'
 
 export const metadata = {
@@ -11,6 +13,15 @@ export default function InvestmentPage() {
       {/* Hero Section */}
       <section className="py-section px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="flex justify-center mb-6">
+            <Logo 
+              width={150} 
+              height={150} 
+              linkToHome={false}
+              showText={false}
+              className="h-20 w-20 md:h-24 md:w-24 object-contain"
+            />
+          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-water-deep mb-6">
             Investment Opportunity
           </h1>

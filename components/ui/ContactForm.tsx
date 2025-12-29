@@ -3,16 +3,23 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { contactFormSchema, type FormType, type ContactFormData } from '@/lib/validation'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 interface ContactFormProps {
   formType: FormType
+}
+
+interface ApiResponse {
+  success: boolean
+  message: string
+  errors?: string[]
 }
 
 export default function ContactForm({ formType }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [submitMessage, setSubmitMessage] = useState('')
+  const submitInProgressRef = useRef(false)
 
   const {
     register,
@@ -26,27 +33,93 @@ export default function ContactForm({ formType }: ContactFormProps) {
     },
   })
 
+  const getApiEndpoint = () => {
+    switch (formType) {
+      case 'buyer':
+        return '/api/contact/buyer'
+      case 'general':
+      default:
+        return '/api/contact/general'
+    }
+  }
+
+  const getErrorMessage = (error: unknown): string => {
+    if (error instanceof TypeError && error.message.includes('fetch')) {
+      return 'Network error: Please check your internet connection and try again.'
+    }
+    if (error instanceof Error) {
+      if (error.message.includes('timeout') || error.message.includes('aborted')) {
+        return 'Request timed out. Please try again.'
+      }
+      if (error.message.includes('Failed to fetch')) {
+        return 'Unable to connect to the server. Please check your connection and try again.'
+      }
+      return error.message
+    }
+    return 'An unexpected error occurred. Please try again later.'
+  }
+
   const onSubmit = async (data: ContactFormData) => {
+    // Prevent duplicate submissions
+    if (submitInProgressRef.current) {
+      return
+    }
+
+    submitInProgressRef.current = true
     setIsSubmitting(true)
     setSubmitStatus('idle')
     setSubmitMessage('')
 
     try {
-      // Form submission will be handled by API endpoint in future stories
-      // For now, just log the data
-      console.log('Form submission:', data)
-      
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 500))
-      
+      const endpoint = getApiEndpoint()
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 30000) // 30 second timeout
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        signal: controller.signal,
+      })
+
+      clearTimeout(timeoutId)
+
+      let responseData: ApiResponse
+      try {
+        responseData = await response.json()
+      } catch (parseError) {
+        throw new Error('Invalid response from server. Please try again.')
+      }
+
+      if (!response.ok || !responseData.success) {
+        // Handle validation errors
+        if (response.status === 400 && responseData.errors) {
+          const errorList = responseData.errors.join(', ')
+          throw new Error(`Validation error: ${errorList}. Please check your input and try again.`)
+        }
+        // Handle server errors
+        throw new Error(
+          responseData.message || `Server error (${response.status}). Please try again later.`
+        )
+      }
+
+      // Success
       setSubmitStatus('success')
-      setSubmitMessage('Thank you! Your message has been sent successfully.')
+      setSubmitMessage(responseData.message || 'Thank you! Your message has been sent successfully.')
       reset()
     } catch (error) {
       setSubmitStatus('error')
-      setSubmitMessage('Sorry, there was an error sending your message. Please try again.')
+      if (error instanceof Error && error.name === 'AbortError') {
+        setSubmitMessage('Request timed out. Please try again.')
+      } else {
+        const errorMessage = getErrorMessage(error)
+        setSubmitMessage(errorMessage)
+      }
     } finally {
       setIsSubmitting(false)
+      submitInProgressRef.current = false
     }
   }
 

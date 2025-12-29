@@ -1,4 +1,5 @@
 import ContactForm from '@/components/ui/ContactForm'
+import Logo from '@/components/ui/Logo'
 
 export const dynamic = 'force-static'
 
@@ -13,6 +14,15 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="py-section px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="flex justify-center mb-6">
+            <Logo 
+              width={150} 
+              height={150} 
+              linkToHome={false}
+              showText={false}
+              className="h-20 w-20 md:h-24 md:w-24 object-contain"
+            />
+          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-water-deep mb-6">
             Contact Us
           </h1>
@@ -42,11 +52,18 @@ export default function ContactPage() {
             </div>
             <div className="space-y-2">
               <h3 className="text-lg font-semibold text-water-deep">Phone</h3>
-              <p className="text-charcoal">+256 XXX XXX XXX</p>
+              <p className="text-charcoal">
+                <a 
+                  href="tel:+256774402784" 
+                  className="text-water-medium hover:text-water-deep transition-colors duration-200 underline decoration-transparent hover:decoration-water-medium"
+                >
+                  +256 774 402784
+                </a>
+              </p>
             </div>
             <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-water-deep">Location</h3>
-              <p className="text-charcoal">Uganda</p>
+              <h3 className="text-lg font-semibold text-water-deep">Address</h3>
+              <p className="text-charcoal">Nayuku Cage Fishing Bugali Namayingo</p>
             </div>
           </div>
         </div>

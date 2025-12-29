@@ -1,5 +1,7 @@
 "use client";
 
+import Image from 'next/image';
+
 type Person = {
   id: string;
   role: string;
@@ -149,15 +151,21 @@ export default function TeamMosaicNayuku() {
                   "aspect-[4/5]",
                 ].join(" ")}
               >
-                <img
+                <Image
                   src={muted}
-                  alt=""
-                  className="absolute inset-0 h-full w-full object-cover transition-opacity duration-[900ms] ease-out group-hover:opacity-0 motion-reduce:transition-none"
+                  alt={`${p.role} team member silhouette`}
+                  fill
+                  className="object-cover transition-opacity duration-[900ms] ease-out group-hover:opacity-0 motion-reduce:transition-none"
+                  unoptimized
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
-                <img
+                <Image
                   src={color}
-                  alt=""
-                  className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-[900ms] ease-out group-hover:opacity-100 motion-reduce:transition-none"
+                  alt={`${p.role} team member portrait`}
+                  fill
+                  className="object-cover opacity-0 transition-opacity duration-[900ms] ease-out group-hover:opacity-100 motion-reduce:transition-none"
+                  unoptimized
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
 
                 {/* label appears only on hover (cleaner) */}

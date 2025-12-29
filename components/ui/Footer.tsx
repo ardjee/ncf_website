@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Logo from './Logo'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -23,10 +24,16 @@ export default function Footer() {
                 </a>
               </p>
               <p>
-                <span className="font-medium">Phone:</span> +256 XXX XXX XXX
+                <span className="font-medium">Phone:</span>{' '}
+                <a 
+                  href="tel:+256774402784" 
+                  className="hover:text-white transition-colors duration-200 underline decoration-transparent hover:decoration-white"
+                >
+                  +256 774 402784
+                </a>
               </p>
               <p>
-                <span className="font-medium">Location:</span> Uganda
+                <span className="font-medium">Address:</span> Nayuku Cage Fishing Bugali Namayingo
               </p>
             </div>
           </div>
@@ -73,10 +80,16 @@ export default function Footer() {
           </div>
 
           {/* Company Info */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90">
-              Nayuku Cage Fishing
-            </h3>
+          <div className="flex items-start gap-4">
+            <div className="h-[150px] w-[150px] flex-shrink-0">
+              <Logo 
+                width={150} 
+                height={150} 
+                linkToHome={true}
+                showText={false}
+                className="h-full w-full object-cover"
+              />
+            </div>
             <p className="text-sm text-white/80 leading-relaxed">
               Professional aquaculture services in Uganda. Fresh tilapia, fingerling production, and feed production.
             </p>

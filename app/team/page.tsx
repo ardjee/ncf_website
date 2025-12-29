@@ -1,4 +1,5 @@
 import TeamMosaicNayuku from '@/components/TeamMosaicNayuku'
+import Logo from '@/components/ui/Logo'
 
 export const metadata = {
   title: 'Our Team | Nayuku Cage Fishing',
@@ -11,6 +12,15 @@ export default function TeamPage() {
       {/* Hero Section */}
       <section className="py-section px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="flex justify-center mb-6">
+            <Logo 
+              width={150} 
+              height={150} 
+              linkToHome={false}
+              showText={false}
+              className="h-20 w-20 md:h-24 md:w-24 object-contain"
+            />
+          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-water-deep mb-6">
             Our Team
           </h1>

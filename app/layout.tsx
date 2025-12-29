@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import Header from '@/components/ui/Header'
 import Footer from '@/components/ui/Footer'
@@ -17,6 +17,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Nayuku Cage Fishing',
   description: 'Professional aquaculture services in Uganda',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({

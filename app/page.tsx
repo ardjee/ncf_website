@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { SparklesIcon, ArrowTrendingUpIcon, CubeIcon } from '@heroicons/react/24/outline'
 import Counter from '@/lib/animations/counter'
+import ImageMorph from '@/lib/animations/morph/ImageMorph'
+import Logo from '@/components/ui/Logo'
 
 export const dynamic = 'force-static'
 
@@ -27,6 +29,17 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-section px-4 sm:px-6 lg:px-8">
+          {/* Logo */}
+          <div className="flex justify-center mb-6">
+            <Logo 
+              width={200} 
+              height={200} 
+              linkToHome={false}
+              showText={false}
+              className="h-24 w-24 md:h-32 md:w-32 object-contain drop-shadow-lg"
+            />
+          </div>
+          
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
             Nayuku Cage Fishing
           </h1>
@@ -70,16 +83,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Key Highlights Section */}
+      {/* Image Gallery Section with Morph Animation */}
       <section className="py-section px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-12 text-center">
+            Our Operations
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <ImageMorph
+                images={[
+                  'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop',
+                  'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=800&h=600&fit=crop',
+                  'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop',
+                ]}
+                alt="Aquaculture operations and fish farming"
+                duration={4}
+                transitionDuration={1.2}
+                width={800}
+                height={500}
+                className="w-full"
+              />
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <ImageMorph
+                images={[
+                  'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop',
+                  'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop',
+                  'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=800&h=600&fit=crop',
+                ]}
+                alt="Sustainable fishing and community impact"
+                duration={4}
+                transitionDuration={1.2}
+                width={800}
+                height={500}
+                className="w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Highlights Section */}
+      <section className="py-section px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-12 text-center">
             What We Offer
           </h2>
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             <div className="text-center space-y-6">
-              <div className="flex justify-center">
-                <SparklesIcon className="h-12 w-12 text-water-deep" aria-hidden="true" />
+              <div className="flex justify-center mb-4 rounded-lg overflow-hidden shadow-md">
+                <ImageMorph
+                  images={[
+                    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop',
+                    'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=400&h=300&fit=crop',
+                  ]}
+                  alt="Fresh Tilapia"
+                  duration={3.5}
+                  transitionDuration={1}
+                  width={400}
+                  height={300}
+                  className="w-full"
+                />
               </div>
               <h3 className="text-xl font-semibold text-water-deep">
                 Fresh Tilapia
@@ -89,8 +154,19 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center space-y-6">
-              <div className="flex justify-center">
-                <ArrowTrendingUpIcon className="h-12 w-12 text-water-deep" aria-hidden="true" />
+              <div className="flex justify-center mb-4 rounded-lg overflow-hidden shadow-md">
+                <ImageMorph
+                  images={[
+                    'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop',
+                    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop',
+                  ]}
+                  alt="Fingerling Production"
+                  duration={3.5}
+                  transitionDuration={1}
+                  width={400}
+                  height={300}
+                  className="w-full"
+                />
               </div>
               <h3 className="text-xl font-semibold text-water-deep">
                 Fingerling Production
@@ -100,8 +176,19 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center space-y-6">
-              <div className="flex justify-center">
-                <CubeIcon className="h-12 w-12 text-water-deep" aria-hidden="true" />
+              <div className="flex justify-center mb-4 rounded-lg overflow-hidden shadow-md">
+                <ImageMorph
+                  images={[
+                    'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=400&h=300&fit=crop',
+                    'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop',
+                  ]}
+                  alt="Feed Production"
+                  duration={3.5}
+                  transitionDuration={1}
+                  width={400}
+                  height={300}
+                  className="w-full"
+                />
               </div>
               <h3 className="text-xl font-semibold text-water-deep">
                 Feed Production
@@ -115,14 +202,29 @@ export default function Home() {
       </section>
 
       {/* What We Are Proud Of Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
+      <section className="py-section px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-12 text-center">
             What we are Proud of
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12">
             {/* Tilapia Capacity */}
             <div className="flex flex-col items-center justify-center space-y-4">
+              <div className="w-full max-w-md rounded-lg overflow-hidden shadow-lg mb-4">
+                <ImageMorph
+                  images={[
+                    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop',
+                    'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=600&h=400&fit=crop',
+                    'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop',
+                  ]}
+                  alt="Tilapia production capacity"
+                  duration={4}
+                  transitionDuration={1.2}
+                  width={600}
+                  height={400}
+                  className="w-full"
+                />
+              </div>
               <h3 className="text-xl font-semibold text-water-deep text-center">
                 Tilapia Capacity
               </h3>
@@ -133,6 +235,21 @@ export default function Home() {
             </div>
             {/* Community */}
             <div className="flex flex-col items-center justify-center space-y-4">
+              <div className="w-full max-w-md rounded-lg overflow-hidden shadow-lg mb-4">
+                <ImageMorph
+                  images={[
+                    'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=600&h=400&fit=crop',
+                    'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop',
+                    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop',
+                  ]}
+                  alt="Community impact"
+                  duration={4}
+                  transitionDuration={1.2}
+                  width={600}
+                  height={400}
+                  className="w-full"
+                />
+              </div>
               <h3 className="text-xl font-semibold text-water-deep text-center">
                 Community
               </h3>
@@ -140,6 +257,59 @@ export default function Home() {
               <p className="text-lg text-charcoal-muted text-center">
                 Directly Impacted
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Image Showcase Section */}
+      <section className="py-section px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-12 text-center">
+            Sustainable Aquaculture
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <ImageMorph
+                images={[
+                  'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&h=400&fit=crop',
+                  'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=500&h=400&fit=crop',
+                ]}
+                alt="Sustainable farming practices"
+                duration={3.5}
+                transitionDuration={1}
+                width={500}
+                height={400}
+                className="w-full"
+              />
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <ImageMorph
+                images={[
+                  'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&h=400&fit=crop',
+                  'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&h=400&fit=crop',
+                ]}
+                alt="Quality fish production"
+                duration={3.5}
+                transitionDuration={1}
+                width={500}
+                height={400}
+                className="w-full"
+              />
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <ImageMorph
+                images={[
+                  'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=500&h=400&fit=crop',
+                  'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&h=400&fit=crop',
+                ]}
+                alt="Community development"
+                duration={3.5}
+                transitionDuration={1}
+                width={500}
+                height={400}
+                className="w-full"
+              />
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
+import Logo from './Logo'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -37,14 +38,15 @@ export default function Header() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex items-center justify-between h-20">
-          {/* Logo/Brand - Inter font (UI text) */}
-          <div className="flex-shrink-0">
-            <Link 
-              href="/" 
-              className="text-xl font-semibold text-charcoal hover:text-water-medium transition-colors duration-200"
-            >
-              Nayuku Cage Fishing
-            </Link>
+          {/* Logo/Brand */}
+          <div className="flex-shrink-0 flex items-center">
+            <Logo 
+              width={180} 
+              height={180} 
+              linkToHome={true}
+              showText={false}
+              className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
+            />
           </div>
 
           {/* Desktop Navigation - Inter font */}
