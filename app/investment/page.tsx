@@ -1,4 +1,5 @@
 import Logo from '@/components/ui/Logo'
+import HeroSubheader from '@/components/ui/HeroSubheader'
 
 export const dynamic = 'force-static'
 
@@ -25,9 +26,12 @@ export default function InvestmentPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-water-deep mb-6">
             Investment Opportunity
           </h1>
-          <p className="text-xl md:text-2xl text-charcoal-light leading-comfortable max-w-3xl mx-auto">
-            Building sustainable value in East African aquaculture
-          </p>
+          <HeroSubheader
+            words="Building sustainable value in East African aquaculture"
+            className="text-xl md:text-2xl text-charcoal-light leading-comfortable max-w-3xl mx-auto"
+            duration={0.6}
+            staggerDelay={0.15}
+          />
         </div>
       </section>
 

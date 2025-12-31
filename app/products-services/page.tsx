@@ -2,6 +2,7 @@ import { RevealOnScroll } from "@/lib/animations/fade-slide"
 import Logo from '@/components/ui/Logo'
 import AnimatedImage from '@/components/ui/AnimatedImage'
 import ImageMorph from '@/lib/animations/morph/ImageMorph'
+import HeroSubheader from '@/components/ui/HeroSubheader'
 
 export const dynamic = 'force-static'
 
@@ -28,9 +29,12 @@ export default function ProductsServicesPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-water-deep mb-6">
             Products & Services
           </h1>
-          <p className="text-xl md:text-2xl text-charcoal-light leading-comfortable max-w-3xl mx-auto">
-            Comprehensive aquaculture solutions across the entire value chain
-          </p>
+          <HeroSubheader
+            words="Comprehensive aquaculture solutions across the entire value chain"
+            className="text-xl md:text-2xl text-charcoal-light leading-comfortable max-w-3xl mx-auto"
+            duration={0.6}
+            staggerDelay={0.15}
+          />
         </div>
       </section>
 
@@ -63,21 +67,19 @@ export default function ProductsServicesPage() {
               </p>
             </div>
             <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-lg">
-              <div className="absolute inset-0">
-                <ImageMorph
-                  images={[
-                    "/images/tilapia_dish1.png",
-                    "/images/tilapia_dish2.png"
-                  ]}
-                  alt="Fresh tilapia dish - Premium quality tilapia from NCF"
-                  duration={5}
-                  transitionDuration={1.2}
-                  width={1000}
-                  height={1000}
-                  className="w-full h-full"
-                  enableScale={true}
-                />
-              </div>
+              <ImageMorph
+                images={[
+                  "/images/tilapia_dish1.png",
+                  "/images/tilapia_dish2.png"
+                ]}
+                alt="Fresh tilapia dish - Premium quality tilapia from NCF"
+                duration={5}
+                transitionDuration={1.2}
+                width={600}
+                height={600}
+                className="absolute inset-0 w-full h-full"
+                enableScale={true}
+              />
             </div>
           </div>
         </div>

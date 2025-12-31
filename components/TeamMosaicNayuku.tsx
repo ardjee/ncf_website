@@ -141,6 +141,14 @@ export default function TeamMosaicNayuku() {
           {team.map((p) => {
             const muted = svgToDataUrl(silhouetteSvg(p.seed));
             const color = svgToDataUrl(corporateColorSvg(p.seed));
+            const isHarry = p.id === "2"; // Operations role
+            const isBob = p.id === "4"; // Farm role
+            const isKlaas = p.id === "7"; // Sales role
+            const isBenja = p.id === "8"; // Admin role
+            const isKees = p.id === "12"; // Feed role
+            const isHenri = p.id === "10"; // Maintenance role
+            const isWilco = p.id === "13"; // Procurement role
+            const isRolf = p.id === "15"; // HR role
 
             return (
               <div
@@ -151,22 +159,106 @@ export default function TeamMosaicNayuku() {
                   "aspect-[4/5]",
                 ].join(" ")}
               >
-                <Image
-                  src={muted}
-                  alt={`${p.role} team member silhouette`}
-                  fill
-                  className="object-cover transition-opacity duration-[900ms] ease-out group-hover:opacity-0 motion-reduce:transition-none"
-                  unoptimized
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                />
-                <Image
-                  src={color}
-                  alt={`${p.role} team member portrait`}
-                  fill
-                  className="object-cover opacity-0 transition-opacity duration-[900ms] ease-out group-hover:opacity-100 motion-reduce:transition-none"
-                  unoptimized
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                />
+                {isHarry ? (
+                  <>
+                    <Image
+                      src="/images/harry.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isBob ? (
+                  <>
+                    <Image
+                      src="/images/bob.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isKlaas ? (
+                  <>
+                    <Image
+                      src="/images/klaas.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isBenja ? (
+                  <>
+                    <Image
+                      src="/images/benja.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isKees ? (
+                  <>
+                    <Image
+                      src="/images/kees.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isHenri ? (
+                  <>
+                    <Image
+                      src="/images/henri.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isWilco ? (
+                  <>
+                    <Image
+                      src="/images/wilco.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isRolf ? (
+                  <>
+                    <Image
+                      src="/images/rolf.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : (
+                  <>
+                    <Image
+                      src={muted}
+                      alt={`${p.role} team member silhouette`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:opacity-0 motion-reduce:transition-none"
+                      unoptimized
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                    <Image
+                      src={color}
+                      alt={`${p.role} team member portrait`}
+                      fill
+                      className="object-cover opacity-0 transition-opacity duration-[900ms] ease-out group-hover:opacity-100 motion-reduce:transition-none"
+                      unoptimized
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                )}
 
                 {/* label appears only on hover (cleaner) */}
                 <div className="absolute inset-x-0 bottom-0 p-4 opacity-0 transition duration-[900ms] ease-out group-hover:opacity-100 motion-reduce:transition-none">

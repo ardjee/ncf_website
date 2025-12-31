@@ -8,19 +8,19 @@ import {
     useTransform,
 } from "motion/react"
 import { useEffect, useRef } from "react"
-import Image from "next/image"
+import NextImage from "next/image"
 
 function useParallax(value: MotionValue<number>, distance: number) {
     return useTransform(value, [0, 1], [-distance, distance])
 }
 
-interface ImageProps {
+interface ParallaxImageProps {
     id: number
     imagePath?: string
     imageAlt?: string
 }
 
-function Image({ id, imagePath, imageAlt }: ImageProps) {
+function ParallaxImage({ id, imagePath, imageAlt }: ParallaxImageProps) {
     const ref = useRef(null)
     const { scrollYProgress } = useScroll({ target: ref })
     const y = useParallax(scrollYProgress, 300)
@@ -31,7 +31,7 @@ function Image({ id, imagePath, imageAlt }: ImageProps) {
     return (
         <section className="h-screen snap-start flex justify-center items-center relative">
             <div className="relative w-[300px] h-[400px] my-5 bg-grey-light overflow-hidden max-[500px]:w-[150px] max-[500px]:h-[200px]">
-                <Image
+                <NextImage
                     src={imagePath || defaultImagePath}
                     alt={imageAlt || defaultAlt}
                     fill
@@ -94,7 +94,7 @@ export default function Parallax({
     return (
         <div className={className}>
             {imageIds.map((imageId) => (
-                <Image
+                <ParallaxImage
                     key={imageId}
                     id={imageId}
                     imagePath={getImagePath?.(imageId)}

@@ -33,6 +33,17 @@ export default function Footer() {
                 </a>
               </p>
               <p>
+                <span className="font-medium">WhatsApp:</span>{' '}
+                <a 
+                  href="https://wa.me/256774402784" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors duration-200 underline decoration-transparent hover:decoration-white"
+                >
+                  +256 774 402784
+                </a>
+              </p>
+              <p>
                 <span className="font-medium">Address:</span> Nayuku Cage Fishing Bugali Namayingo
               </p>
             </div>

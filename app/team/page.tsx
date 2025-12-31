@@ -1,5 +1,6 @@
 import TeamMosaicNayuku from '@/components/TeamMosaicNayuku'
 import Logo from '@/components/ui/Logo'
+import HeroSubheader from '@/components/ui/HeroSubheader'
 
 export const metadata = {
   title: 'Our Team | Nayuku Cage Fishing',
@@ -24,9 +25,12 @@ export default function TeamPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-water-deep mb-6">
             Our Team
           </h1>
-          <p className="text-xl md:text-2xl text-charcoal-light leading-comfortable max-w-3xl mx-auto">
-            Dedicated professionals committed to sustainable aquaculture excellence
-          </p>
+          <HeroSubheader
+            words="Dedicated professionals committed to sustainable aquaculture excellence"
+            className="text-xl md:text-2xl text-charcoal-light leading-comfortable max-w-3xl mx-auto"
+            duration={0.6}
+            staggerDelay={0.15}
+          />
         </div>
       </section>
 

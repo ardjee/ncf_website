@@ -1,17 +1,31 @@
+"use client"
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { SparklesIcon, ArrowTrendingUpIcon, CubeIcon } from '@heroicons/react/24/outline'
 import Counter from '@/lib/animations/counter'
 import ImageMorph from '@/lib/animations/morph/ImageMorph'
 import Logo from '@/components/ui/Logo'
+import HeroSubheader from '@/components/ui/HeroSubheader'
+import AnimatedImage from '@/components/ui/AnimatedImage'
+import { motion, useScroll, useTransform } from 'motion/react'
+import { useRef } from 'react'
 
 export const dynamic = 'force-static'
 
 export default function Home() {
+  const heroRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  })
+  const y = useTransform(scrollYProgress, [0, 1], [0, -100])
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0])
+
   return (
     <main className="min-h-screen bg-white-warm">
       {/* Hero Section - Premium, luxury spacing with background image */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <section ref={heroRef} className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -40,13 +54,27 @@ export default function Home() {
             />
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
+          <motion.h1 
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight"
+            style={{ y, opacity }}
+          >
             Nayuku Cage Fishing
-          </h1>
+          </motion.h1>
           
-          <p className="text-xl md:text-2xl text-white/95 leading-comfortable max-w-2xl mx-auto">
-            Professional aquaculture services in Uganda. Bringing healthy, nutritious fish to every home in East Africa.
-          </p>
+          <div className="text-xl md:text-2xl text-white/95 leading-comfortable max-w-2xl mx-auto">
+            <HeroSubheader
+              words="Our mission is clear: Feeding East Africa!"
+              className="block"
+              duration={0.6}
+              staggerDelay={0.15}
+            />
+            <HeroSubheader
+              words="We aim to bring healthy, nutritious fish to every household."
+              className="block mt-2"
+              duration={0.6}
+              staggerDelay={0.15}
+            />
+          </div>
 
           {/* Call-to-Action Buttons - Minimal, premium styling */}
           <div className="pt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -68,56 +96,32 @@ export default function Home() {
 
       {/* Value Proposition Section */}
       <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8 text-center">
             Our Mission
           </h2>
-          <div className="space-y-6 text-lg text-charcoal leading-relaxed text-center max-w-3xl mx-auto">
-            <p>
-              Founded in 2020 by dedicated entrepreneurs from Uganda and the Netherlands, NCF works with the Rabobank Foundation to fight undernourishment in Uganda through sustainable aquaculture.
-            </p>
-            <p>
-              We strive to bring healthy, nutritious fish to every home in East Africa. We are dedicated to 100% sustainability and eco-friendliness, bringing education and employment to talented young men and women.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Image Gallery Section with Morph Animation */}
-      <section className="py-section px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-12 text-center">
-            Our Operations
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <ImageMorph
-                images={[
-                  'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop',
-                  'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=800&h=600&fit=crop',
-                  'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop',
-                ]}
-                alt="Aquaculture operations and fish farming"
-                duration={4}
-                transitionDuration={1.2}
-                width={800}
-                height={500}
-                className="w-full"
-              />
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-8">
+            <div className="space-y-6 text-lg text-charcoal leading-relaxed">
+              <p>
+                Founded in 2020 by dedicated entrepreneurs from Uganda and the Netherlands, NCF works with the Rabobank Foundation to fight undernourishment in Uganda through sustainable aquaculture.
+              </p>
+              <p>
+                We strive to bring healthy, nutritious fish to every home in East Africa. We are dedicated to 100% sustainability and eco-friendliness, bringing education and employment to talented young men and women.
+              </p>
+              <div className="mt-6 flex justify-center">
+                <Image
+                  src="/images/rabo_foundation.png"
+                  alt="Rabobank Foundation - Strategic partner of NCF"
+                  width={200}
+                  height={200}
+                  className="w-[200px] h-auto object-contain"
+                />
+              </div>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <ImageMorph
-                images={[
-                  'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop',
-                  'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop',
-                  'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=800&h=600&fit=crop',
-                ]}
-                alt="Sustainable fishing and community impact"
-                duration={4}
-                transitionDuration={1.2}
-                width={800}
-                height={500}
-                className="w-full"
+              <AnimatedImage
+                src="/images/team.png"
+                alt="NCF Team - Dedicated professionals committed to sustainable aquaculture"
               />
             </div>
           </div>

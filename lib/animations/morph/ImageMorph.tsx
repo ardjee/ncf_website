@@ -82,10 +82,15 @@ export default function ImageMorph({
     "scale-down": "object-scale-down",
   }[objectFit]
 
+  const isAbsolute = className.includes('absolute') || className.includes('inset')
+  const containerStyle = isAbsolute
+    ? { width: "100%", height: "100%" }
+    : { width: "100%", height, maxWidth: width }
+
   return (
     <div
       className={`relative overflow-hidden ${className}`}
-      style={{ width: "100%", height, maxWidth: width }}
+      style={containerStyle}
     >
       <AnimatePresence mode="wait">
         <motion.div

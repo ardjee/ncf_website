@@ -1,5 +1,6 @@
 import ContactForm from '@/components/ui/ContactForm'
 import Logo from '@/components/ui/Logo'
+import HeroSubheader from '@/components/ui/HeroSubheader'
 
 export const dynamic = 'force-static'
 
@@ -26,9 +27,12 @@ export default function ContactPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-water-deep mb-6">
             Contact Us
           </h1>
-          <p className="text-xl md:text-2xl text-charcoal-light leading-comfortable max-w-3xl mx-auto">
-            Get in touch with Nayuku Cage Fishing. We're here to help with your inquiries.
-          </p>
+          <HeroSubheader
+            words="Get in touch with Nayuku Cage Fishing. We're here to help with your inquiries."
+            className="text-xl md:text-2xl text-charcoal-light leading-comfortable max-w-3xl mx-auto"
+            duration={0.6}
+            staggerDelay={0.15}
+          />
         </div>
       </section>
 
@@ -58,6 +62,16 @@ export default function ContactPage() {
                   className="text-water-medium hover:text-water-deep transition-colors duration-200 underline decoration-transparent hover:decoration-water-medium"
                 >
                   +256 774 402784
+                </a>
+              </p>
+              <p className="text-charcoal">
+                <a 
+                  href="https://wa.me/256774402784" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-water-medium hover:text-water-deep transition-colors duration-200 underline decoration-transparent hover:decoration-water-medium"
+                >
+                  WhatsApp
                 </a>
               </p>
             </div>
