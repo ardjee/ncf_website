@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 import { motion } from "motion/react"
 
 interface TextGenerateEffectProps {
@@ -45,22 +45,23 @@ export function TextGenerateEffect({
         }
         
         return (
-          <motion.span
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration,
-              ease: "easeOut",
-            }}
-            className="inline-block"
-          >
-            {word}
+          <Fragment key={index}>
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration,
+                ease: "easeOut",
+              }}
+              className="inline-block"
+            >
+              {word}
+            </motion.span>
             {showSpace && ' '}
-          </motion.span>
+          </Fragment>
         )
       })}
     </div>
