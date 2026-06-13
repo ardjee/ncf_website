@@ -1,5 +1,6 @@
 import Logo from '@/components/ui/Logo'
 import HeroSubheader from '@/components/ui/HeroSubheader'
+import SubtleFishBackground from '@/components/ui/SubtleFishBackground'
 
 export const dynamic = 'force-static'
 
@@ -36,8 +37,9 @@ export default function InvestmentPage() {
       </section>
 
       {/* Market Opportunity Overview Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8 bg-white">
+        <SubtleFishBackground />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
             Market Opportunity Overview
           </h2>
@@ -65,8 +67,9 @@ export default function InvestmentPage() {
       </section>
 
       {/* Company Structure and Stability Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <SubtleFishBackground variant="outline" />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
             Company Structure and Stability
           </h2>
@@ -101,8 +104,9 @@ export default function InvestmentPage() {
       </section>
 
       {/* Risk Management Approach Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8 bg-white">
+        <SubtleFishBackground />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
             Risk Management Approach
           </h2>
@@ -141,8 +145,9 @@ export default function InvestmentPage() {
       </section>
 
       {/* Investment Proposition Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <SubtleFishBackground variant="outline" />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
             Investment Proposition
           </h2>
@@ -188,4 +193,3 @@ export default function InvestmentPage() {
     </main>
   )
 }
-

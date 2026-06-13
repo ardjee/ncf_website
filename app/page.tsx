@@ -8,6 +8,7 @@ import ImageMorph from '@/lib/animations/morph/ImageMorph'
 import Logo from '@/components/ui/Logo'
 import HeroSubheader from '@/components/ui/HeroSubheader'
 import AnimatedImage from '@/components/ui/AnimatedImage'
+import SubtleFishBackground from '@/components/ui/SubtleFishBackground'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 
@@ -95,18 +96,25 @@ export default function Home() {
       </section>
 
       {/* Value Proposition Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <SubtleFishBackground variant="outline" />
+        <div className="relative z-10 max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8 text-center">
             Our Mission
           </h2>
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-8">
             <div className="space-y-6 text-lg text-charcoal leading-relaxed">
               <p>
-                Founded in 2020 by dedicated entrepreneurs from Uganda and the Netherlands, NCF works with the Rabobank Foundation to fight undernourishment in Uganda through sustainable aquaculture.
+                Nayuku Fishery is a purpose-driven aquaculture company founded in 2020 by entrepreneurs from Uganda and the Netherlands. Our mission: Feeding East Africa.
               </p>
               <p>
-                We strive to bring healthy, nutritious fish to every home in East Africa. We are dedicated to 100% sustainability and eco-friendliness, bringing education and employment to talented young men and women.
+                Operating on Lake Victoria in Uganda&apos;s Namayingo District, we specialize in sustainable Tilapia farming using floating cage systems. By combining smart technology, local talent, and community engagement, we&apos;re building a scalable model that delivers fresh, affordable fish protein while creating jobs and empowering youth.
+              </p>
+              <p>
+                We believe that food security starts with local solutions. That&apos;s why every fish we raise supports a bigger vision: a future where nutritious food is grown sustainably, communities thrive, and opportunity is shared.
+              </p>
+              <p>
+                In collaboration with our partners we expand our impact and build resilient supply chains from lake to plate.
               </p>
               <div className="mt-6 flex justify-center">
                 <Image
@@ -129,8 +137,9 @@ export default function Home() {
       </section>
 
       {/* Key Highlights Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <SubtleFishBackground variant="outline" />
+        <div className="relative z-10 max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-12 text-center">
             What We Offer
           </h2>
@@ -206,8 +215,9 @@ export default function Home() {
       </section>
 
       {/* What We Are Proud Of Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8 bg-white">
+        <SubtleFishBackground />
+        <div className="relative z-10 max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-12 text-center">
             What we are Proud of
           </h2>
@@ -267,8 +277,9 @@ export default function Home() {
       </section>
 
       {/* Additional Image Showcase Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <SubtleFishBackground variant="outline" />
+        <div className="relative z-10 max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-12 text-center">
             Sustainable Aquaculture
           </h2>
@@ -321,4 +332,3 @@ export default function Home() {
     </main>
   )
 }
-

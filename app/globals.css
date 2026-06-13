@@ -79,5 +79,288 @@
   .snap-start {
     scroll-snap-align: start;
   }
-}
 
+  .fish-drift {
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .fish-outline {
+    --fish-opacity-strong: 0.18;
+    --fish-opacity-medium: 0.14;
+    --fish-opacity-low: 0.09;
+  }
+
+  .fish-route-a {
+    animation-delay: -1.5s;
+    animation-duration: 8.5s;
+    animation-name: fish-route-a;
+  }
+
+  .fish-route-b {
+    animation-delay: -4.2s;
+    animation-duration: 6.8s;
+    animation-name: fish-route-b;
+  }
+
+  .fish-route-c {
+    animation-delay: -6.1s;
+    animation-duration: 9.6s;
+    animation-name: fish-route-c;
+  }
+
+  .fish-route-d {
+    animation-delay: -2.8s;
+    animation-duration: 7.4s;
+    animation-name: fish-route-d;
+  }
+
+  .fish-route-e {
+    animation-delay: -5.3s;
+    animation-duration: 5.8s;
+    animation-name: fish-route-e;
+  }
+
+  .fish-route-f {
+    animation-delay: -3.6s;
+    animation-duration: 7.9s;
+    animation-name: fish-route-f;
+  }
+
+  .fish-route-g {
+    animation-delay: -7.1s;
+    animation-duration: 9.2s;
+    animation-name: fish-route-g;
+  }
+
+  .fish-route-h {
+    animation-delay: -1.9s;
+    animation-duration: 6.4s;
+    animation-name: fish-route-h;
+  }
+
+  @keyframes fish-route-a {
+    0% {
+      opacity: var(--fish-opacity-strong, 0.11);
+      transform: translate3d(-26px, 0, 0) rotate(-3deg);
+    }
+
+    24% {
+      opacity: var(--fish-opacity-strong, 0.105);
+      transform: translate3d(22px, -14px, 0) rotate(-5deg);
+    }
+
+    48% {
+      opacity: var(--fish-opacity-strong, 0.1);
+      transform: translate3d(58px, 20px, 0) rotate(3deg);
+    }
+
+    72% {
+      opacity: var(--fish-opacity-medium, 0.09);
+      transform: translate3d(96px, -6px, 0) rotate(-2deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate3d(142px, 30px, 0) rotate(4deg);
+    }
+  }
+
+  @keyframes fish-route-b {
+    0% {
+      opacity: 0.08;
+      transform: translate3d(-18px, 0, 0) rotate(2deg);
+    }
+
+    22% {
+      opacity: 0.078;
+      transform: translate3d(18px, 16px, 0) rotate(5deg);
+    }
+
+    46% {
+      opacity: 0.075;
+      transform: translate3d(48px, -20px, 0) rotate(-5deg);
+    }
+
+    72% {
+      opacity: 0.055;
+      transform: translate3d(82px, 10px, 0) rotate(3deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate3d(118px, -26px, 0) rotate(-5deg);
+    }
+  }
+
+  @keyframes fish-route-c {
+    0% {
+      opacity: var(--fish-opacity-strong, 0.075);
+      transform: translate3d(-32px, 0, 0) rotate(1deg);
+    }
+
+    20% {
+      opacity: var(--fish-opacity-strong, 0.073);
+      transform: translate3d(18px, -18px, 0) rotate(-4deg);
+    }
+
+    44% {
+      opacity: var(--fish-opacity-medium, 0.07);
+      transform: translate3d(58px, 14px, 0) rotate(4deg);
+    }
+
+    70% {
+      opacity: var(--fish-opacity-low, 0.052);
+      transform: translate3d(104px, -12px, 0) rotate(-2deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate3d(154px, 18px, 0) rotate(3deg);
+    }
+  }
+
+  @keyframes fish-route-d {
+    0% {
+      opacity: 0.09;
+      transform: translate3d(-24px, 0, 0) rotate(-1deg);
+    }
+
+    28% {
+      opacity: 0.086;
+      transform: translate3d(30px, 22px, 0) rotate(4deg);
+    }
+
+    52% {
+      opacity: 0.08;
+      transform: translate3d(70px, -16px, 0) rotate(-3deg);
+    }
+
+    78% {
+      opacity: 0.055;
+      transform: translate3d(104px, 18px, 0) rotate(3deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate3d(130px, -4px, 0) rotate(-1deg);
+    }
+  }
+
+  @keyframes fish-route-e {
+    0% {
+      opacity: var(--fish-opacity-strong, 0.065);
+      transform: translate3d(-20px, 0, 0) rotate(3deg);
+    }
+
+    26% {
+      opacity: var(--fish-opacity-strong, 0.063);
+      transform: translate3d(24px, -12px, 0) rotate(-2deg);
+    }
+
+    54% {
+      opacity: var(--fish-opacity-medium, 0.06);
+      transform: translate3d(54px, 24px, 0) rotate(5deg);
+    }
+
+    76% {
+      opacity: var(--fish-opacity-low, 0.035);
+      transform: translate3d(78px, -8px, 0) rotate(-1deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate3d(104px, 36px, 0) rotate(4deg);
+    }
+  }
+
+  @keyframes fish-route-f {
+    0% {
+      opacity: var(--fish-opacity-strong, 0.07);
+      transform: translate3d(-18px, 0, 0) rotate(-2deg);
+    }
+
+    24% {
+      opacity: var(--fish-opacity-strong, 0.067);
+      transform: translate3d(20px, 18px, 0) rotate(4deg);
+    }
+
+    50% {
+      opacity: var(--fish-opacity-medium, 0.06);
+      transform: translate3d(54px, -14px, 0) rotate(-3deg);
+    }
+
+    74% {
+      opacity: var(--fish-opacity-low, 0.043);
+      transform: translate3d(82px, 20px, 0) rotate(4deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate3d(112px, 24px, 0) rotate(4deg);
+    }
+  }
+
+  @keyframes fish-route-g {
+    0% {
+      opacity: var(--fish-opacity-strong, 0.085);
+      transform: translate3d(-30px, 0, 0) rotate(2deg);
+    }
+
+    18% {
+      opacity: var(--fish-opacity-strong, 0.082);
+      transform: translate3d(22px, -20px, 0) rotate(-4deg);
+    }
+
+    42% {
+      opacity: var(--fish-opacity-medium, 0.075);
+      transform: translate3d(58px, 16px, 0) rotate(4deg);
+    }
+
+    68% {
+      opacity: var(--fish-opacity-low, 0.055);
+      transform: translate3d(98px, -24px, 0) rotate(-5deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate3d(138px, -30px, 0) rotate(-4deg);
+    }
+  }
+
+  @keyframes fish-route-h {
+    0% {
+      opacity: var(--fish-opacity-strong, 0.06);
+      transform: translate3d(-16px, 0, 0) rotate(1deg);
+    }
+
+    25% {
+      opacity: var(--fish-opacity-strong, 0.058);
+      transform: translate3d(18px, 14px, 0) rotate(4deg);
+    }
+
+    48% {
+      opacity: var(--fish-opacity-medium, 0.055);
+      transform: translate3d(44px, -16px, 0) rotate(-3deg);
+    }
+
+    74% {
+      opacity: var(--fish-opacity-low, 0.038);
+      transform: translate3d(70px, 24px, 0) rotate(5deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate3d(96px, 34px, 0) rotate(5deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fish-drift {
+      animation: none;
+    }
+  }
+}

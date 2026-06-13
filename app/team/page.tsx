@@ -1,6 +1,8 @@
 import TeamMosaicNayuku from '@/components/TeamMosaicNayuku'
+import Image from 'next/image'
 import Logo from '@/components/ui/Logo'
 import HeroSubheader from '@/components/ui/HeroSubheader'
+import SubtleFishBackground from '@/components/ui/SubtleFishBackground'
 
 export const metadata = {
   title: 'Our Team | Nayuku Cage Fishing',
@@ -11,8 +13,21 @@ export default function TeamPage() {
   return (
     <main className="min-h-screen bg-white-warm">
       {/* Hero Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <Image
+          src="/images/20240204_131719.jpg"
+          alt="Nayuku Cage Fishing team"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+          quality={75}
+        />
+        <div className="absolute inset-0 bg-white-warm/82" />
+        <div className="absolute inset-0 bg-sand-light/45 mix-blend-screen" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white-warm/70 via-white-warm/50 to-white-warm/90" />
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <Logo 
               width={150} 
@@ -35,8 +50,9 @@ export default function TeamPage() {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8 bg-white">
+        <SubtleFishBackground />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
             Leadership
           </h2>
@@ -60,15 +76,17 @@ export default function TeamPage() {
       </section>
 
       {/* Team Mosaic Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <SubtleFishBackground variant="outline" />
+        <div className="relative z-10 max-w-6xl mx-auto">
           <TeamMosaicNayuku />
         </div>
       </section>
 
       {/* Credentials & Certifications Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <SubtleFishBackground variant="outline" />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
             Credentials & Certifications
           </h2>
@@ -116,4 +134,3 @@ export default function TeamPage() {
     </main>
   )
 }
-

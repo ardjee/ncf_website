@@ -3,6 +3,7 @@ import Logo from '@/components/ui/Logo'
 import AnimatedImage from '@/components/ui/AnimatedImage'
 import ImageMorph from '@/lib/animations/morph/ImageMorph'
 import HeroSubheader from '@/components/ui/HeroSubheader'
+import SubtleFishBackground from '@/components/ui/SubtleFishBackground'
 
 export const dynamic = 'force-static'
 
@@ -39,8 +40,9 @@ export default function ProductsServicesPage() {
       </section>
 
       {/* Fresh Tilapia Offerings Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8 bg-white">
+        <SubtleFishBackground placement="text-left" />
+        <div className="relative z-10 max-w-6xl mx-auto">
           <RevealOnScroll>
             <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
               Fresh Tilapia Offerings
@@ -86,8 +88,9 @@ export default function ProductsServicesPage() {
       </section>
 
       {/* Fingerling Production Services Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <SubtleFishBackground variant="outline" placement="text-right" />
+        <div className="relative z-10 max-w-6xl mx-auto">
           <RevealOnScroll>
             <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
               Fingerling Production Services
@@ -121,8 +124,9 @@ export default function ProductsServicesPage() {
       </section>
 
       {/* Feed Production Services Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8 bg-white">
+        <SubtleFishBackground placement="text-left" />
+        <div className="relative z-10 max-w-6xl mx-auto">
           <RevealOnScroll>
             <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
               Feed Production Services
@@ -156,8 +160,9 @@ export default function ProductsServicesPage() {
       </section>
 
       {/* Cage Production Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <SubtleFishBackground variant="outline" placement="text-right" />
+        <div className="relative z-10 max-w-6xl mx-auto">
           <RevealOnScroll>
             <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
               Cage Production
@@ -194,4 +199,3 @@ export default function ProductsServicesPage() {
     </main>
   )
 }
-

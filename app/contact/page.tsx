@@ -1,6 +1,7 @@
 import ContactForm from '@/components/ui/ContactForm'
 import Logo from '@/components/ui/Logo'
 import HeroSubheader from '@/components/ui/HeroSubheader'
+import SubtleFishBackground from '@/components/ui/SubtleFishBackground'
 
 export const dynamic = 'force-static'
 
@@ -37,8 +38,9 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8 bg-white">
+        <SubtleFishBackground />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
             Contact Information
           </h2>
@@ -84,8 +86,9 @@ export default function ContactPage() {
       </section>
 
       {/* Forms Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <SubtleFishBackground variant="outline" />
+        <div className="relative z-10 max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-12 text-center">
             Send Us a Message
           </h2>
@@ -111,4 +114,3 @@ export default function ContactPage() {
     </main>
   )
 }
-

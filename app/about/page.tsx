@@ -1,5 +1,6 @@
 import Logo from '@/components/ui/Logo'
 import HeroSubheader from '@/components/ui/HeroSubheader'
+import SubtleFishBackground from '@/components/ui/SubtleFishBackground'
 
 export const dynamic = 'force-static'
 
@@ -36,8 +37,9 @@ export default function AboutPage() {
       </section>
 
       {/* Company History & Mission Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8 bg-white">
+        <SubtleFishBackground />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
             Our Story
           </h2>
@@ -59,8 +61,9 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <SubtleFishBackground variant="outline" />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
             Our Mission
           </h2>
@@ -99,8 +102,9 @@ export default function AboutPage() {
       </section>
 
       {/* Market Position Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8 bg-white">
+        <SubtleFishBackground />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
             Market Position
           </h2>
@@ -127,8 +131,9 @@ export default function AboutPage() {
       </section>
 
       {/* Company Credentials & Achievements Section */}
-      <section className="py-section px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
+        <SubtleFishBackground variant="outline" />
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8">
             Credentials & Achievements
           </h2>
@@ -190,4 +195,3 @@ export default function AboutPage() {
     </main>
   )
 }
-

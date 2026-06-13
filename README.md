@@ -135,7 +135,6 @@ Should complete without errors.
 │   ├── layout.tsx               # Root layout with Header/Footer
 │   ├── page.tsx                 # Homepage
 │   ├── globals.css              # Global styles (Tailwind directives)
-│   └── typography-showcase/     # Typography selection tool
 ├── components/                   # React components
 │   ├── ui/                      # Reusable UI components
 │   │   ├── Header.tsx           # Site header/navigation
@@ -191,4 +190,3 @@ Should complete without errors.
 - Story 1.4: Configure TypeScript and Development Tools
 - Epic 2: Core Layout & Navigation (Header/Footer already implemented)
 - Epic 3: Homepage (initial implementation complete, can be enhanced)
-

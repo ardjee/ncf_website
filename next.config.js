@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // App Router is the default in Next.js 14+
+  outputFileTracingRoot: __dirname,
+  turbopack: {
+    root: __dirname,
+  },
   
   // Image optimization configuration
   images: {
@@ -37,4 +41,3 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
-

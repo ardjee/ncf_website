@@ -9,26 +9,25 @@ type Person = {
 };
 
 const team: Person[] = [
-  { id: "1", role: "Leadership", seed: 11 },
+  { id: "1", role: "Country Director", seed: 11 },
   { id: "2", role: "Operations", seed: 22 },
-  { id: "3", role: "Hatchery", seed: 33 },
-  { id: "4", role: "Farm", seed: 44 },
-  { id: "5", role: "Quality", seed: 55 },
-  { id: "6", role: "Logistics", seed: 66 },
-  { id: "7", role: "Sales", seed: 77 },
-  { id: "8", role: "Admin", seed: 88 },
-  { id: "9", role: "Finance", seed: 99 },
-  { id: "10", role: "Maintenance", seed: 101 },
-  { id: "11", role: "Security", seed: 111 },
+  { id: "3", role: "CFO", seed: 33 },
+  { id: "4", role: "Asset Management", seed: 44 },
+  { id: "5", role: "CEO", seed: 55 },
+  { id: "6", role: "Head of Operation", seed: 66 },
+  { id: "7", role: "Hatchery", seed: 77 },
+  { id: "8", role: "Teamlead Cage Feeding", seed: 88 },
+  { id: "9", role: "Sales", seed: 99 },
+  { id: "10", role: "Financial Oversight", seed: 101 },
+  { id: "11", role: "Team Leader Production", seed: 111 },
   { id: "12", role: "Feed", seed: 121 },
-  { id: "13", role: "Procurement", seed: 131 },
-  { id: "14", role: "Community", seed: 141 },
-  { id: "15", role: "HR", seed: 151 },
-  { id: "16", role: "Sustainability", seed: 161 },
-  { id: "17", role: "Training", seed: 171 },
-  { id: "18", role: "Compliance", seed: 181 },
-  { id: "19", role: "Drivers", seed: 191 },
-  { id: "20", role: "Support", seed: 201 },
+  { id: "13", role: "Nutrition", seed: 131 },
+  { id: "14", role: "Branding", seed: 141 },
+  { id: "15", role: "Strategic Partnerships", seed: 151 },
+  { id: "16", role: "Investor", seed: 161 },
+  { id: "17", role: "Community Manager", seed: 171 },
+  { id: "18", role: "Sustainability", seed: 181 },
+  { id: "19", role: "Head of Security", seed: 191 },
 ];
 
 function svgToDataUrl(svg: string) {
@@ -133,7 +132,7 @@ export default function TeamMosaicNayuku() {
         <div className="mb-10">
           <h2 className="text-3xl font-medium tracking-tight">Our People</h2>
           <p className="mt-2 max-w-2xl text-sm text-neutral-600">
-            Placeholder silhouettes for now — hover to preview the future portrait style.
+            The people that power our operation
           </p>
         </div>
 
@@ -141,14 +140,25 @@ export default function TeamMosaicNayuku() {
           {team.map((p) => {
             const muted = svgToDataUrl(silhouetteSvg(p.seed));
             const color = svgToDataUrl(corporateColorSvg(p.seed));
+            const isJustine = p.id === "1"; // Country Director role
+            const isIvan = p.id === "3"; // CFO role
+            const isDavid = p.id === "6"; // Head of Operation role
+            const isJulius = p.id === "11"; // Team Leader Production role
+            const isRJ = p.id === "5"; // CEO role
+            const isBonn = p.id === "9"; // Sales role
             const isHarry = p.id === "2"; // Operations role
-            const isBob = p.id === "4"; // Farm role
-            const isKlaas = p.id === "7"; // Sales role
-            const isBenja = p.id === "8"; // Admin role
+            const isBob = p.id === "4"; // Asset Management role
+            const isKlaas = p.id === "7"; // Hatchery role
+            const isBenja = p.id === "8"; // Teamlead Cage Feeding role
             const isKees = p.id === "12"; // Feed role
-            const isHenri = p.id === "10"; // Maintenance role
-            const isWilco = p.id === "13"; // Procurement role
-            const isRolf = p.id === "15"; // HR role
+            const isHenri = p.id === "10"; // Financial Oversight role
+            const isWilco = p.id === "13"; // Nutrition role
+            const isKrijn = p.id === "14"; // Branding role
+            const isRolf = p.id === "15"; // Strategic Partnerships role
+            const isMarton = p.id === "16"; // Investor role
+            const isChairman = p.id === "17"; // Community Manager role
+            const isHilbrandt = p.id === "18"; // Sustainability role
+            const isMuku = p.id === "19"; // Head of Security role
 
             return (
               <div
@@ -159,7 +169,67 @@ export default function TeamMosaicNayuku() {
                   "aspect-[4/5]",
                 ].join(" ")}
               >
-                {isHarry ? (
+                {isJustine ? (
+                  <>
+                    <Image
+                      src="/images/justine.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isIvan ? (
+                  <>
+                    <Image
+                      src="/images/ivan_ncf.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isDavid ? (
+                  <>
+                    <Image
+                      src="/images/david.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isJulius ? (
+                  <>
+                    <Image
+                      src="/images/julius.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isRJ ? (
+                  <>
+                    <Image
+                      src="/images/rj.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isBonn ? (
+                  <>
+                    <Image
+                      src="/images/bonnfish.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isHarry ? (
                   <>
                     <Image
                       src="/images/harry.png"
@@ -229,10 +299,60 @@ export default function TeamMosaicNayuku() {
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     />
                   </>
+                ) : isKrijn ? (
+                  <>
+                    <Image
+                      src="/images/krijn.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
                 ) : isRolf ? (
                   <>
                     <Image
                       src="/images/rolf.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isMarton ? (
+                  <>
+                    <Image
+                      src="/images/marton.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isChairman ? (
+                  <>
+                    <Image
+                      src="/images/chairman.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isHilbrandt ? (
+                  <>
+                    <Image
+                      src="/images/hilbrandt.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isMuku ? (
+                  <>
+                    <Image
+                      src="/images/muku.png"
                       alt={`${p.role} team member`}
                       fill
                       className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
@@ -279,4 +399,3 @@ export default function TeamMosaicNayuku() {
     </section>
   );
 }
-
