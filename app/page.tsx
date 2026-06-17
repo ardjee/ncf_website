@@ -102,34 +102,26 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-8 text-center">
             Our Mission
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-8">
-            <div className="space-y-6 text-lg text-charcoal leading-relaxed">
-              <p>
-                Nayuku Fishery is a purpose-driven aquaculture company founded in 2020 by entrepreneurs from Uganda and the Netherlands. Our mission: Feeding East Africa.
-              </p>
-              <p>
-                Operating on Lake Victoria in Uganda&apos;s Namayingo District, we specialize in sustainable Tilapia farming using floating cage systems. By combining smart technology, local talent, and community engagement, we&apos;re building a scalable model that delivers fresh, affordable fish protein while creating jobs and empowering youth.
-              </p>
-              <p>
-                We believe that food security starts with local solutions. That&apos;s why every fish we raise supports a bigger vision: a future where nutritious food is grown sustainably, communities thrive, and opportunity is shared.
-              </p>
-              <p>
-                In collaboration with our partners we expand our impact and build resilient supply chains from lake to plate.
-              </p>
-              <div className="mt-6 flex justify-center">
-                <Image
-                  src="/images/rabo_foundation.png"
-                  alt="Rabobank Foundation - Strategic partner of NCF"
-                  width={200}
-                  height={200}
-                  className="w-[200px] h-auto object-contain"
-                />
-              </div>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <AnimatedImage
-                src="/images/team.png"
-                alt="NCF Team - Dedicated professionals committed to sustainable aquaculture"
+          <div className="space-y-6 text-lg text-charcoal leading-relaxed max-w-3xl mx-auto">
+            <p>
+              Nayuku Fishery is a purpose-driven aquaculture company founded in 2020 by entrepreneurs from Uganda and the Netherlands. Our mission: Feeding East Africa.
+            </p>
+            <p>
+              Operating on Lake Victoria in Uganda&apos;s Namayingo District, we specialize in sustainable Tilapia farming using floating cage systems. By combining smart technology, local talent, and community engagement, we&apos;re building a scalable model that delivers fresh, affordable fish protein while creating jobs and empowering youth.
+            </p>
+            <p>
+              We believe that food security starts with local solutions. That&apos;s why every fish we raise supports a bigger vision: a future where nutritious food is grown sustainably, communities thrive, and opportunity is shared.
+            </p>
+            <p>
+              In collaboration with our partners we expand our impact and build resilient supply chains from lake to plate.
+            </p>
+            <div className="mt-6 flex justify-center">
+              <Image
+                src="/images/rabo_foundation.png"
+                alt="Rabobank Foundation - Strategic partner of NCF"
+                width={200}
+                height={200}
+                className="w-[200px] h-auto object-contain"
               />
             </div>
           </div>
@@ -148,8 +140,8 @@ export default function Home() {
               <div className="flex justify-center mb-4 rounded-lg overflow-hidden shadow-md">
                 <ImageMorph
                   images={[
-                    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop',
-                    'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=400&h=300&fit=crop',
+                    '/images/fresh-tilapia.jpg',
+                    '/images/fresh-tilapia-alt.jpg',
                   ]}
                   alt="Fresh Tilapia"
                   duration={3.5}
@@ -170,8 +162,8 @@ export default function Home() {
               <div className="flex justify-center mb-4 rounded-lg overflow-hidden shadow-md">
                 <ImageMorph
                   images={[
-                    'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop',
-                    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop',
+                    '/images/fingerling-production.jpg',
+                    '/images/fingerling-production-2.jpg',
                   ]}
                   alt="Fingerling Production"
                   duration={3.5}
@@ -192,8 +184,8 @@ export default function Home() {
               <div className="flex justify-center mb-4 rounded-lg overflow-hidden shadow-md">
                 <ImageMorph
                   images={[
-                    'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=400&h=300&fit=crop',
-                    'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop',
+                    '/images/feed-production.jpg',
+                    '/images/feed-production-2.jpg',
                   ]}
                   alt="Feed Production"
                   duration={3.5}
@@ -253,8 +245,8 @@ export default function Home() {
                 <ImageMorph
                   images={[
                     'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=600&h=400&fit=crop',
-                    'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop',
-                    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop',
+                    '/images/community-impact-2.jpg',
+                    '/images/community-impact-3.jpg',
                   ]}
                   alt="Community impact"
                   duration={4}
@@ -267,7 +259,10 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-water-deep text-center">
                 Community
               </h3>
-              <Counter to={2000} from={1} duration={5} />
+              <div className="flex items-baseline justify-center gap-1">
+                <Counter to={2000} from={1} duration={5} />
+                <span className="text-hero font-bold text-water-deep">+</span>
+              </div>
               <p className="text-lg text-charcoal-muted text-center">
                 Directly Impacted
               </p>
@@ -276,59 +271,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Additional Image Showcase Section */}
-      <section className="relative overflow-hidden py-section px-4 sm:px-6 lg:px-8">
-        <SubtleFishBackground variant="outline" />
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-water-deep mb-12 text-center">
-            Sustainable Aquaculture
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <ImageMorph
-                images={[
-                  'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&h=400&fit=crop',
-                  'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=500&h=400&fit=crop',
-                ]}
-                alt="Sustainable farming practices"
-                duration={3.5}
-                transitionDuration={1}
-                width={500}
-                height={400}
-                className="w-full"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <ImageMorph
-                images={[
-                  'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&h=400&fit=crop',
-                  'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&h=400&fit=crop',
-                ]}
-                alt="Quality fish production"
-                duration={3.5}
-                transitionDuration={1}
-                width={500}
-                height={400}
-                className="w-full"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <ImageMorph
-                images={[
-                  'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=500&h=400&fit=crop',
-                  'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&h=400&fit=crop',
-                ]}
-                alt="Community development"
-                duration={3.5}
-                transitionDuration={1}
-                width={500}
-                height={400}
-                className="w-full"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   )
 }
