@@ -43,7 +43,7 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-section px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-section px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
           {/* Logo */}
           <div className="flex justify-center mb-6">
             <Logo 
@@ -87,7 +87,7 @@ export default function Home() {
             </Link>
             <Link
               href="/contact"
-              className="inline-block px-8 py-3 text-base font-medium text-white border-2 border-white/80 hover:bg-white/20 transition-all duration-200 min-h-[44px] min-w-[120px] flex items-center justify-center"
+              className="inline-block px-8 py-3 text-base font-medium text-white border-2 border-white/80 hover:bg-white hover:text-water-deep transition-all duration-200 min-h-[44px] min-w-[120px] flex items-center justify-center"
             >
               Contact Us
             </Link>

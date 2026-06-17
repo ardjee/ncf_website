@@ -101,8 +101,8 @@ export default function Footer() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <p className="text-sm text-white/80 leading-relaxed">
-              Professional aquaculture services in Uganda. Fresh tilapia, fingerling production, and feed production.
+            <p className="text-xl font-semibold text-white/90 leading-relaxed">
+              Feeding East Africa
             </p>
           </div>
         </div>
