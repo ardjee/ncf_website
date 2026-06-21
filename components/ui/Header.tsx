@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import Logo from './Logo'
@@ -39,13 +40,21 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex items-center justify-between h-20">
           {/* Logo/Brand */}
-          <div className="flex-shrink-0 flex items-center">
-            <Logo 
-              width={180} 
-              height={180} 
+          <div className="flex-shrink-0 flex items-center gap-3 sm:gap-4">
+            <Logo
+              width={180}
+              height={180}
               linkToHome={true}
               showText={false}
               className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
+            />
+            <span className="h-8 w-px bg-grey-medium" aria-hidden="true" />
+            <Image
+              src="/images/rabo-foundation-logo.png"
+              alt="Rabobank Foundation - Strategic partner of NCF"
+              width={460}
+              height={200}
+              className="h-7 w-auto sm:h-8 object-contain"
             />
           </div>
 

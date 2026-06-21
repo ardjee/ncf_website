@@ -115,15 +115,6 @@ export default function Home() {
             <p>
               In collaboration with our partners we expand our impact and build resilient supply chains from lake to plate.
             </p>
-            <div className="mt-6 flex justify-center">
-              <Image
-                src="/images/rabo_foundation.png"
-                alt="Rabobank Foundation - Strategic partner of NCF"
-                width={200}
-                height={200}
-                className="w-[200px] h-auto object-contain"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -185,7 +176,7 @@ export default function Home() {
                 <ImageMorph
                   images={[
                     '/images/feed-production.jpg',
-                    '/images/feed-production-2.jpg',
+                    '/images/feeds.png',
                   ]}
                   alt="Feed Production"
                   duration={3.5}
@@ -219,9 +210,9 @@ export default function Home() {
               <div className="w-full max-w-md rounded-lg overflow-hidden shadow-lg mb-4">
                 <ImageMorph
                   images={[
-                    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop',
-                    'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=600&h=400&fit=crop',
-                    'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop',
+                    '/images/fresh-tilapia-alt.jpg',
+                    '/images/full_cage.png',
+                    '/images/cages1.png',
                   ]}
                   alt="Tilapia production capacity"
                   duration={4}
@@ -244,7 +235,7 @@ export default function Home() {
               <div className="w-full max-w-md rounded-lg overflow-hidden shadow-lg mb-4">
                 <ImageMorph
                   images={[
-                    'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=600&h=400&fit=crop',
+                    '/images/tilapia-capacity-2.jpg',
                     '/images/community-impact-2.jpg',
                     '/images/community-impact-3.jpg',
                   ]}

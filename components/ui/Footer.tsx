@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Logo from './Logo'
 
 export default function Footer() {
@@ -91,19 +92,35 @@ export default function Footer() {
           </div>
 
           {/* Company Info */}
-          <div className="flex items-start gap-4">
-            <div className="h-[150px] w-[150px] flex-shrink-0">
-              <Logo 
-                width={150} 
-                height={150} 
-                linkToHome={true}
-                showText={false}
-                className="h-full w-full object-cover"
-              />
+          <div className="flex flex-col items-start gap-5">
+            <div className="flex items-center gap-4">
+              <div className="h-[120px] w-[120px] flex-shrink-0">
+                <Logo
+                  width={120}
+                  height={120}
+                  linkToHome={true}
+                  showText={false}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <p className="text-xl font-semibold text-white/90 leading-relaxed">
+                Feeding East Africa
+              </p>
             </div>
-            <p className="text-xl font-semibold text-white/90 leading-relaxed">
-              Feeding East Africa
-            </p>
+            <div className="w-full space-y-3 border-t border-white/10 pt-5">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90">
+                Our Partner
+              </h3>
+              <div className="inline-flex items-center rounded-lg bg-white/95 px-4 py-3 shadow-sm">
+                <Image
+                  src="/images/rabo-foundation-logo.png"
+                  alt="Rabobank Foundation - Strategic partner of NCF"
+                  width={460}
+                  height={200}
+                  className="h-12 w-auto object-contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
