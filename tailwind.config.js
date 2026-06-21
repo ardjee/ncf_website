@@ -59,9 +59,9 @@ module.exports = {
       },
       spacing: {
         // Generous spacing for luxury feel - whitespace does the work
-        'section': '6rem', // 96px - large section spacing
-        'section-lg': '8rem', // 128px - extra large section spacing
-        'section-xl': '10rem', // 160px - maximum luxury spacing
+        'section': '3.5rem', // 56px - section spacing
+        'section-lg': '5rem', // 80px - large section spacing
+        'section-xl': '6.5rem', // 104px - extra large section spacing
       },
       letterSpacing: {
         'tight': '-0.02em', // Tighter for large Inter headings

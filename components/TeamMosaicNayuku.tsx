@@ -28,6 +28,7 @@ const team: Person[] = [
   { id: "17", role: "Community Manager", seed: 171 },
   { id: "18", role: "Sustainability", seed: 181 },
   { id: "19", role: "Head of Security", seed: 191 },
+  { id: "20", role: "Investor", seed: 201 },
 ];
 
 function svgToDataUrl(svg: string) {
@@ -127,9 +128,9 @@ function corporateColorSvg(seed: number) {
 
 export default function TeamMosaicNayuku() {
   return (
-    <section className="w-full py-16">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-10">
+    <section className="w-full">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8">
           <h2 className="text-3xl font-medium tracking-tight">Our People</h2>
           <p className="mt-2 max-w-2xl text-sm text-neutral-600">
             The people that power our operation
@@ -159,6 +160,7 @@ export default function TeamMosaicNayuku() {
             const isChairman = p.id === "17"; // Community Manager role
             const isHilbrandt = p.id === "18"; // Sustainability role
             const isMuku = p.id === "19"; // Head of Security role
+            const isMichel = p.id === "20"; // Investor role
 
             return (
               <div
@@ -353,6 +355,16 @@ export default function TeamMosaicNayuku() {
                   <>
                     <Image
                       src="/images/muku.png"
+                      alt={`${p.role} team member`}
+                      fill
+                      className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </>
+                ) : isMichel ? (
+                  <>
+                    <Image
+                      src="/images/michel.png"
                       alt={`${p.role} team member`}
                       fill
                       className="object-cover grayscale transition-all duration-[900ms] ease-out group-hover:grayscale-0 motion-reduce:transition-none"
